@@ -322,19 +322,19 @@ int main() {
 			if (FringeS)						ShadeS = 0x2591;
 			for (int y = 0; y < Y; y++) {
 
-				if (y <= Sky) Plane[y * X + x] = ' ';								// Небо
-				else if (y > Sky && y <= Y / 2.0) Plane[y * X + x] = Shade;			// Стена
-				else if (y < (Y + 7) / 2.0 && y >(Y - 7) / 2.0						// Ребро для полублока
+				if (y <= Sky) Plane[y * X + x] = ' ';				// Небо
+				else if (y > Sky && y <= Y / 2.0) Plane[y * X + x] = Shade;	// Стена
+				else if (y < (Y + 7) / 2.0 && y >(Y - 7) / 2.0			// Ребро для полублока
 					&& WORLD.c_str()[(int)PosY + (int)PosX * WSX] != '/')
 					Plane[y * X + x] = ShadeF;
-				else if (y > Y / 2.0 && y <= Ground) {								// Полублок
+				else if (y > Y / 2.0 && y <= Ground) {				// Полублок
 					if (WORLD.c_str()[(int)PosX * WSX + (int)PosY] == '/')
 						Ground = Y - Sky + 2 * Space;
 					Plane[y * X + x] = Shade;
 					if (WORLD.c_str()[(int)PosX * WSX + (int)PosY] != '/')
 						Plane[y * X + x] = ShadeS;
 				}
-				else {																// Земля
+				else {								// Земля
 					float DistG = 1.0f - ((y - Y / 2.0f) / (Y / 2.0f));
 					if (DistG < 0.25)		Shade = '#';
 					else if (DistG < 0.5)	Shade = 'x';
