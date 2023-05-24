@@ -103,16 +103,16 @@ int main() {
 	bool EndBattleMusic = true;		// Проверка на музыку при окончании битвы
 	bool FindMusic = true;			// Проверка на музыку при находке
 	int PotionBag = 0;			// Инвентарь
-	float PotionEffect = 25.0f;		// Эффект зелья
+	float PotionEffect = 45.0f;		// Эффект зелья
 	Player.MaxHealth = 100.0f;		// Максисмальное здоровье игрока
 	Player.Health = 100.0f; 		// Здоровье игрока
-	Player.Attack = 6.0f;			// Урон наносимый игроком
+	Player.Attack = 2.0f;			// Урон наносимый игроком
 	Player.Damage = 0.0f;			// Урон полученный игроком
 	Player.IFX = X / 320;			// Прибавка для панели здоровья по X
 	Player.IFY = Y / 113.5;			// Прибавка для панели здоровья по Y
 	Bat.MaxHealth = 30.0f;			// Максисмальное здоровье врага: Bat
 	Bat.Health = 30.0f;			// Здоровье врага: Bat
-	Bat.Attack = 2.0f;			// Урон наносимый врагом: Bat
+	Bat.Attack = 4.0f;			// Урон наносимый врагом: Bat
 	Bat.Damage = 0.0f;			// Урон полученный врага: Bat
 	Bat.IFX = X / 320;			// Прибавка для панели здоровья по X
 	Bat.IFY = 2 * Player.IFY + Player.Y;	// Прибавка для панели здоровья по Y
@@ -200,12 +200,13 @@ int main() {
 		}
 
 		// Скорость движения в зависимости от нажатия Shift и использования карты
-		if (GetAsyncKeyState(VK_TAB) & 0x8000)				Speed = 1.5f;
+		if (GetAsyncKeyState(VK_TAB) & 0x8000)			Speed = 1.5f;
 		else if (GetAsyncKeyState(VK_SHIFT) & 0x8000)		Speed = 5.5f;
-		else												Speed = 3.0f;
+		else							Speed = 3.0f;CamSpeed = 5.5f;
 
 		// Рестарт
 		if (GetAsyncKeyState('R') & 0x8000) {
+			CamSpeed = 5.5f;
 			PosX = 29.0f;
 			PosY = 2.0f;
 			PosA = 0.0f;
@@ -429,8 +430,9 @@ int main() {
 		
 		// Бой
 		if ((PosY >= 28.0f) && (PosY <= 34.0f) && (PosX >= 30.0f) && (PosX <= 35.0f) && (Bat.Health > 0.0f) && (Player.Health > 0)) {
+			draw( Plane, BAT, X, Y);
 			Speed = 0.0f;
-			draw( Plane, BAT, X, Y);					// Отображение BAT
+			CamSpeed = 0.0f;// Отображение BAT
 			if (Bat.Health != 0) drawHP (Plane, Bat, 4);			// Здоровье BAT
 				drawHP (Plane, Player, 1);				// Здоровье игрока
 			// Атака
@@ -459,6 +461,7 @@ int main() {
 		if (Player.Health <= 0.0f) {
 			draw(Plane, LOSE, X, Y);
 			Speed = 0.0f;
+			CamSpeed = 0.0f;
 		}
 		if (Player.Health <= 0.0f && LoseMusic) {
 			PlaySoundA((LPCSTR)"C:\\Lose_MazEMusic.WAV", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
@@ -472,6 +475,7 @@ int main() {
 		if (PosY >= 63.0f) {
 			draw(Plane, WIN, X, Y);
 			Speed = 0.0f;
+			CamSpeed = 0.0f;
 		}
 		if (PosY >= 63.0f && WinMusic) {
 			PlaySoundA((LPCSTR)"C:\\Win_MazEMusic.WAV", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
@@ -484,8 +488,9 @@ int main() {
 			PlaySoundA((LPCSTR)"C:\\V2_MazEMusic.WAV", NULL, SND_FILENAME | SND_LOOP | SND_ASYNC);
 		}
 		if (PosY == 2.0f && PosX == 29.0f && Menu) {
-			Speed = 0.0f;
 			draw(Plane, MENU, X, Y);
+			Speed = 0.0f;
+			CamSpeed = 0.0f;
 			PosA = 0.0f;
 		}
 		if (PosY == 2.0f && PosX == 29.0f && MenuMusic) {
