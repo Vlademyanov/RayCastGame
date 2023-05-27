@@ -103,6 +103,7 @@ int main() {
 	bool EndBattleMusic = true;		// Проверка на музыку при окончании битвы
 	bool FindMusic = true;			// Проверка на музыку при находке
 	int PotionBag = 0;			// Инвентарь
+	int Weather = randomNumber(0, 1);	// Погода
 	float PotionEffect = 45.0f;		// Эффект зелья
 	Player.MaxHealth = 100.0f;		// Максисмальное здоровье игрока
 	Player.Health = 100.0f; 		// Здоровье игрока
@@ -334,8 +335,12 @@ int main() {
 
 			/*ШТРИХОВКА*/
 			short ShadeWall= ' ', ShadeSlab = ' ', ShadeFringle = ' ', ShadeClimb = ' ', ShadeStar = ' '; 
-			if (randomNumber(-5, 95) > 0)		ShadeStar = ' ';
-			else					ShadeStar = 'F';
+			
+			if (Weather == 0) {
+				if (randomNumber(-5, 95) > 0)	ShadeStar = ' ';
+				else							ShadeStar = 'F';
+			}
+			else if(Weather == 1)				ShadeStar = ' ';
 
 			if (DistW <= DEPTH / 6.0f)		ShadeFringle = '!';			
 			else if (DistW < DEPTH / 4.0f)		ShadeFringle = '!';
