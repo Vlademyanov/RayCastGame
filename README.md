@@ -1,45 +1,58 @@
-# Лабиринт Дракулы
+# Dracula's Labyrinth
 
-Лабиринт Дракулы - это игра, в которой вы попадаете в лабиринт, заполненный опасностями в том числе и самим Дракулой. Вам предстоит победить Дракулу и найти зелье лечения, чтобы выжить и победить.
+Dracula's Labyrinth is a game in which you enter a maze filled with dangers including Dracula himself. You will have to defeat Dracula and find a healing potion to survive and win.
 
-## Особенности игры
+## Game Features
 
-- Лабиринт: Игра происходит в загадочном лабиринте, где каждый ход может быть опасным. Вам нужно будет исследовать лабиринт и находить короткие пути.
-- Противники: В игре присутствует босс, с которым вам придется сражаться. Враг имеет свои собственные характеристики и атаки. Будьте осторожны и используйте свои навыки, чтобы победить его.
-- Зелье лечения: В лабиринте вы сможете найти зелье лечения, которое поможет восстановить ваше здоровье. Будьте внимательны и ищите зелье, чтобы выжить в сражении.
-- Интерфейс: В игре есть пользовательский интерфейс, который показывает ваше текущее здоровье и здоровье противника. Вы можете отслеживать свой прогресс и принимать решения на основе своего состояния.
+- Labyrinth: The game takes place in a mysterious maze where every move can be dangerous. You will need to explore the maze and find shortcuts.
+- Opponents: The game features a boss that you will have to fight. The enemy has its own characteristics and attacks. Be careful and use your skills to defeat him.
+- Healing Potion: In the maze you will be able to find a healing potion that will help you restore your health. Be careful and look for the potion to survive the battle.
+- Interface: The game has a user interface that shows your current health and the enemy's health. You can track your progress and make decisions based on your health.
 
-## Установка
+## Installation
 
-- Создайте проект проект в Visual Studio.
-- Перенесите файлы из папки C: на диск С.
-- Перенесите папку CARDS в папку с проектом.
-- Чтобы запустить игру, запустите проект. После запуска игры первым, что вы увидите, будет появление окна «Меню» с названием игры. Чтобы закрыть это окно, вы можете нажать на стрелку вверх (кнопку «↑»).
+- Create a project in Visual Studio.
+- Move the files from the C: folder to the C drive.
+- Move the CARDS folder to the project folder.
+- To run properly, set the character size on the command line to 5 
+and you may need to use a monitor with a resolution of 1920x1080
+- To run the game, start the project. After starting the game, the first thing you will see is a ‘Menu’ window with the name of the game. To close this window, you can click on the up arrow (the ‘↑’ button).
 
-## Управление
+## Controls
 
-- Поворот: Вы можете поворачивать персонажа с помощью мыши или стрелочных клавиш.
-- Движение: Используйте клавиши WASD для перемещения по лабиринту.
-- Зелье лечения: Если у вас есть зелье лечения в инвентаре, вы можете использовать его, нажав клавишу 'H'.
-- Рестарт: Если вам нужно начать уровень заново, вы можете нажать клавишу 'R'.
-- Выход: Если вы хотите выйти из игры, просто нажмите клавишу Esc.
-- Бег: Если вы хотите ускориться, нажмите Shift.
-- Атака: Для атаки просто нажимайте F.
-- Карта: Если вы заблудились нажмите TAB.
+- Rotate: You can rotate the character using the mouse or the arrow keys.
+- Movement: Use the WASD keys to move around the maze.
+- Healing Potion: If you have a healing potion in your inventory, you can use it by pressing the ‘H’ key.
+- Restart: If you need to start the level again, you can press the ‘R’ key.
+- Exit: If you want to quit the game, just press the Esc key.
+- Running: If you want to speed up, press Shift.
+- Attack: To attack, simply press F.
+- Map: If you get lost, press TAB.
 
-## Бой
+## Combat
 
-- Сражение: Вас ожидают сражение с самим Дракулой. Вы сможете атаковать его, нажимая клавишу 'F', его здоровье будет отображаться на панели здоровья.
-- Зелье лечения: Если ваше здоровье опускается, вы можете использовать зелье лечения, чтобы восстановить некоторое количество здоровья, нажав 'H'.
+- Combat: You will be facing Dracula himself. You will be able to attack him by pressing the ‘F’ key, his health will be displayed on the health bar.
+- Healing Potion: If your health drops, you can use a healing potion to restore some health by pressing ‘H’.
 
-![стена](CARDS/стена.png)
+## Authors and licenses
 
-![полублок](CARDS/полублок.png)
+In my work, I was guided and used the code from the repository located at:
+https://github.com/OneLoneCoder/CommandLineFPS/blob/master/CommandLineFPS.cpp
 
-![алтарь](CARDS/алтарь.png)
+And also on the video at: 
+https://youtu.be/xW8skO7MFYw
 
-![мышь](CARDS/мышь.png)
+## Screenshots
+Images may appear different on various monitors because the color palette is displayed differently, depending on how the human eye perceives the symbols and colors presented by each screen.
 
-![зелье](CARDS/зелье.png)
+![wall](CARDS/стена.png)
 
-![карта](CARDS/карта.png)
+![half-block](CARDS/полублок.png)
+
+![altar](CARDS/алтарь.png)
+
+![bat](CARDS/мышь.png)
+
+![potion](CARDS/зелье.png)
+
+![map](CARDS/карта.png)
